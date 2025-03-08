@@ -5,6 +5,7 @@ public transport buses, similar to metro train ticketing. The app will use QR co
 facilitate ticket booking, boarding verification, and fare calculation. 
 
 Features 
+
 User Features 
 • QR Code Scanner: Scan QR codes installed on buses to fetch bus details. 
 • Route Selection: Users select boarding and destination stops. 
@@ -13,6 +14,7 @@ User Features
 • Payment Integration (Future Scope): Users can pay through UPI, wallets, or 
 credit/debit cards. 
 • Ticket History: View past ticket bookings. 
+
 Admin Features 
 • Bus Management: Update bus details, routes, and schedules. 
 • Fare Management: Modify fare calculation logic. 
