@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - RTC Bus Ticket Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .btn-blue { background-color: #60A5FA; color: white; padding: 10px; border-radius: 5px; text-align: center; width: 100%; }
+        .btn-blue:hover { background-color: #3B82F6; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: #60A5FA; color: white; }
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; right: 0; background: white; min-width: 150px; box-shadow: 0px 4px 8px rgba(0,0,0,0.2); z-index: 1; }
+        .dropdown-content a { color: black; padding: 10px; display: block; text-decoration: none; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); margin-top: 20px; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- ✅ Header Section -->
+    <header class="header-container">
+        <h1 class="text-2xl font-bold">🚍 User Dashboard</h1>
+        <div class="dropdown">
+            <button class="btn-blue">☰ Profile</button>
+            <div class="dropdown-content">
+                <a href="#">View Profile</a>
+                <a href="#">Settings</a>
+                <a href="#" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ✅ Welcome Message -->
+    <div class="max-w-lg mx-auto container text-center">
+        <h2 class="text-xl font-semibold mb-4">Welcome, User!</h2>
+    </div>
+
+    <!-- ✅ Booking History -->
+    <div class="max-w-lg mx-auto container">
+        <h2 class="text-xl font-semibold mb-2">📜 Booking History</h2>
+        <button class="btn-blue">View Booking History</button>
+    </div>
+
+    <!-- ✅ Search & Book Tickets -->
+    <div class="max-w-lg mx-auto container">
+        <h2 class="text-xl font-semibold mb-2">🚌 Search & Book Tickets</h2>
+        <input type="text" class="w-full p-2 border rounded-md mb-2" placeholder="Enter Source">
+        <input type="text" class="w-full p-2 border rounded-md mb-2" placeholder="Enter Destination">
+        <button class="btn-blue">Find Buses</button>
+    </div>
+
+    <!-- ✅ JavaScript for Logout -->
+    <script>
+        function logout() {
+            window.location.href = "index.html"; // Redirect to Home Page
+        }
+    </script>
+
+</body>
+</html>

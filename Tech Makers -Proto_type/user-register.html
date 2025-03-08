@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration - RTC Bus Ticket Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .btn-blue { background-color: #60A5FA; color: white; padding: 10px; border-radius: 5px; text-align: center; width: 100%; }
+        .btn-blue:hover { background-color: #3B82F6; }
+        .container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); margin-top: 50px; }
+        .header-container { text-align: center; padding: 20px; background: #60A5FA; color: white; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- ✅ Header -->
+    <header class="header-container">
+        <h1 class="text-2xl font-bold">User Registration</h1>
+    </header>
+
+    <!-- ✅ Registration Form -->
+    <div class="max-w-md mx-auto container">
+        <form id="registerForm">
+            <h2 class="text-xl font-semibold mb-4 text-center">Create an Account</h2>
+            
+            <label class="block mb-2">📧 Email:</label>
+            <input type="email" id="regEmail" class="w-full p-2 border rounded-md mb-4" placeholder="Enter your email" required>
+
+            <label class="block mb-2">🔒 Password:</label>
+            <input type="password" id="regPassword" class="w-full p-2 border rounded-md mb-4" placeholder="Create a password" required>
+
+            <button type="submit" class="btn-blue">Register</button>
+        </form>
+    </div>
+
+    <!-- ✅ JavaScript for Registration -->
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var email = document.getElementById("regEmail").value;
+            var password = document.getElementById("regPassword").value;
+
+            localStorage.setItem("userEmail", email);
+            localStorage.setItem("userPassword", password);
+
+            alert("Registration Successful!");
+            window.location.href = "user-login.html"; 
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan QR Code</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <style>
+        .btn-blue { background-color: #60A5FA; color: white; padding: 10px; border-radius: 5px; text-align: center; }
+        .scanner-box { text-align: center; margin-top: 20px; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="max-w-md mx-auto container text-center">
+        <h2 class="text-xl font-semibold mb-4">📷 Scan QR Code</h2>
+        <div id="qr-reader" style="width: 300px; margin: auto;"></div>
+    </div>
+
+    <script>
+        let scanner = new Html5Qrcode("qr-reader");
+
+        scanner.start(
+            { facingMode: "environment" },
+            { fps: 10, qrbox: 250 },
+            (decodedText) => {
+                window.location.href = `ticket-details.html?data=${encodeURIComponent(decodedText)}`;
+            },
+            (errorMessage) => { console.log(errorMessage); }
+        );
+    </script>
+
+</body>
+</html>

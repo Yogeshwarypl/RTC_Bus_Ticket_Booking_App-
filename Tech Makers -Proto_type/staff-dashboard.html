@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .btn-blue { background-color: #60A5FA; color: white; padding: 10px; border-radius: 5px; text-align: center; }
+        .btn-blue:hover { background-color: #3B82F6; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: #60A5FA; color: white; }
+        .container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); margin-top: 20px; text-align: center; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- ✅ Header -->
+    <header class="header-container">
+        <h1 class="text-2xl font-bold">Staff Dashboard</h1>
+        <a href="index.html">
+            <button class="btn-blue">Logout</button>
+        </a>
+    </header>
+
+    <!-- ✅ Staff Features -->
+    <div class="max-w-md mx-auto container">
+        <h2 class="text-xl font-semibold mb-4">📌 Staff Controls</h2>
+        <a href="generate-qr.html">
+            <button class="btn-blue w-full mb-3">Generate Route QR</button>
+        </a>
+        <a href="scan-tickets.html">
+            <button class="btn-blue w-full mb-3">Scan Tickets</button>
+        </a>
+    </div>
+
+</body>
+</html>

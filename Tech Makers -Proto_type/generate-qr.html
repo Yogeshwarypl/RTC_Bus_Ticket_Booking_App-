@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Route QR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        .btn-blue { background-color: #60A5FA; color: white; padding: 10px; border-radius: 5px; text-align: center; }
+        .btn-blue:hover { background-color: #3B82F6; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: #60A5FA; color: white; }
+        .container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); margin-top: 20px; text-align: center; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- ✅ Header -->
+    <header class="header-container">
+        <h1 class="text-2xl font-bold">Generate Route QR</h1>
+        <a href="staff-dashboard.html">
+            <button class="btn-blue">Back</button>
+        </a>
+    </header>
+
+    <!-- ✅ QR Code Generator -->
+    <div class="max-w-md mx-auto container">
+        <h2 class="text-xl font-semibold mb-4">📌 Enter Route Details</h2>
+        <input type="text" id="routeInput" placeholder="Enter Route Name" class="w-full p-2 border rounded-md mb-4">
+        <button onclick="generateQR()" class="btn-blue w-full">Generate QR Code</button>
+        <div id="qrcode" class="mt-4"></div>
+    </div>
+
+    <script>
+        function generateQR() {
+            let route = document.getElementById("routeInput").value;
+            if (route) {
+                document.getElementById("qrcode").innerHTML = "";
+                new QRCode(document.getElementById("qrcode"), route);
+            } else {
+                alert("Please enter a route name!");
+            }
+        }
+    </script>
+
+</body>
+</html>

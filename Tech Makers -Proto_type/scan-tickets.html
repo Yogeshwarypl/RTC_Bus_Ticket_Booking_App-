@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTC Bus Ticket Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 150px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .feature-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+        }
+        .btn-blue {
+            background-color: #60A5FA;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            display: block;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        .btn-blue:hover {
+            background-color: #3B82F6;
+        }
+        .btn-login {
+            width: 80px;
+            padding: 6px;
+            font-size: 14px;
+        }
+        .login-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- ✅ Header -->
+    <header class="bg-gray-800 text-white p-4 flex justify-between items-center">
+        <div class="w-1/4"></div>  
+        <h1 class="text-2xl font-bold text-center flex-1">RTC Bus Ticket Booking</h1>
+        <div class="flex items-center space-x-4 w-1/4 justify-end">
+            <button class="btn-blue btn-login" onclick="openLogin()">Login</button>
+            <div class="dropdown">
+                <button class="text-white text-xl">&#9776;</button>
+                <div class="dropdown-content">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Settings</a>
+                    <a href="#">About</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ✅ Login Popup -->
+    <div id="loginPopup" class="login-container">
+        <h2 class="text-xl font-semibold mb-4">Login</h2>
+        <button class="btn-blue w-full mb-3" onclick="redirectToUser()">User Login</button>
+        <button class="btn-blue w-full mb-3" onclick="redirectToStaff()">Staff Login</button>
+        <button class="btn-blue w-full mt-2" onclick="closeLogin()">Close</button>
+    </div>
+
+    <!-- ✅ User Features -->
+    <div class="max-w-md mx-auto mt-8">
+        <div class="feature-box">
+            <h2 class="text-xl font-semibold mb-2">📜 Booking History</h2>
+            <button class="btn-blue">View Booking History</button>
+        </div>
+        <div class="feature-box">
+            <h2 class="text-xl font-semibold mb-2">🏙️ Select City</h2>
+            <select class="w-full p-2 border rounded-md">
+                <option>Select a city</option>
+                <option>Hyderabad</option>
+                <option>Bangalore</option>
+                <option>Chennai</option>
+                <option>Mumbai</option>
+            </select>
+        </div>
+        <div class="feature-box">
+            <h2 class="text-xl font-semibold mb-2">🚌 Bus Routes & Places</h2>
+            <input type="text" class="w-full p-2 border rounded-md" placeholder="Enter place or route">
+            <button class="btn-blue mt-2">Find Routes</button>
+        </div>
+        <div class="feature-box text-center">
+            <h2 class="text-xl font-semibold mb-2">📷 QR Code Scanner</h2>
+            <button class="btn-blue">QR Code Scanner</button>
+        </div>
+    </div>
+
+    <!-- ✅ JavaScript -->
+    <script>
+        function openLogin() {
+            document.getElementById("loginPopup").style.display = "block";
+        }
+        function closeLogin() {
+            document.getElementById("loginPopup").style.display = "none";
+        }
+        function redirectToUser() {
+            closeLogin();
+        }
+        function redirectToStaff() {
+            window.location.href = "staff-dashboard.html";
+        }
+    </script>
+
+</body>
+</html>
